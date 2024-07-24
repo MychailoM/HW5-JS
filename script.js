@@ -21,8 +21,8 @@ switch (drinks) {
 alert(drinksName);
 
 
-function check() {
-    const fielText = parseFloat(document.getElementById("text_one").value);
+export function checks() {
+    const fielText = document.getElementById("text_one").value;
     let mounth;
 
     switch (fielText) {
@@ -57,60 +57,60 @@ function check() {
         default:
             alert("введіть день тижня");
     }
-    alert(`${fielNumOne} ${mounth} день`);
+    alert(`${fielText} ${mounth} день`);
 }
 
 
-function checkNum() {
-    const fielNumOne = parseFloat(document.getElementById("number_one").value);
+export function checkNum() {
+    const fielNumOne = document.getElementById("number_one").value;
     let season;
 
     switch (fielNumOne) {
-    case 12:
+    case '12':
         season = "winter";
         break;
 
-    case 1:
+    case '1':
         season = "winter";
         break;
 
-    case 2:
+    case '2':
         season = "winter";
         break;
 
-    case 3:
+    case '3':
         season = "spring";
         break;
 
-    case 4:
+    case '4':
         season = "spring";
         break;
 
-    case 5:
+    case '5':
         season = "spring";
         break;
 
-    case 6:
+    case '6':
         season = "summer";
         break;
 
-    case 7:
+    case '7':
         season = "summer";
         break;
 
-    case 8:
+    case '8':
         season = "summer";
         break;
 
-    case 3:
+    case '3':
         season = "autumn";
         break;
 
-    case 4:
+    case '4':
         season = "autumn";
         break;
 
-    case 5:
+    case '5':
         season = "autumn";
             break;
         
@@ -121,8 +121,8 @@ function checkNum() {
     
 }
 
-function checkTextTwo() {
-    const color = parseFloat(document.getElementById("textTwo").value);
+export function checkTextTwo() {
+    const color = document.getElementById("textTwo").value;
     
 
     if (color === 'червоний') {
@@ -135,5 +135,50 @@ function checkTextTwo() {
 }
 
 
+export function calculate() {
+    const numOne = parseFloat(document.getElementById("value_1").value);
+    const numTwo = parseFloat(document.getElementById("value_2").value);
+    const operation = document.getElementById("select").value;
+    let result;
+
+    if (isNaN(numOne) || isNaN(numTwo)) {
+        alert('не всі поля заповнені')
+    } else {
+        switch (operation) {
+            case "+":
+                result = numOne + numTwo;
+                break;
+            
+            case "-":
+                result = numOne - numTwo;
+                break;
+            
+            case "*":
+                result = numOne * numTwo;
+                break;
+            
+            case "/":
+                if (numTwo === 0) {
+                    alert('ділення на нуль не можливе');                  
+                } else {
+                    result = numOne / numTwo;                    
+                }
+                break
+            
+            default:
+                alert('невідома операція');
+
+        }
+
+        alert(result);
+    }
+    
+    
+            
+    
+    
+    }
+
+    
 
 
